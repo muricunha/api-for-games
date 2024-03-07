@@ -2,6 +2,7 @@ package br.com.pi4semestre.service;
 
 import br.com.pi4semestre.model.Colaborador;
 import br.com.pi4semestre.repository.ColaboradorRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 import java.util.List;
@@ -22,12 +23,10 @@ public class ColaboradorService {
 
     public List<Colaborador> listarColaborador(){return colaboradorRepository.findAll();}
 
+    @Transactional
     public void alterarColaborador(Colaborador colaborador) {
-
+        colaboradorRepository.save(colaborador);
     }
-
-
-
 
     public void deletaColaborador(@RequestBody Colaborador colaborador) {
         colaboradorRepository.delete(colaborador);

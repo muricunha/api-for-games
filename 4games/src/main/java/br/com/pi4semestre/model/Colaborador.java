@@ -13,7 +13,7 @@ public class Colaborador {
 
     private String senha;
 
-    private int CPF;
+    private long cpf;
 
     @Column(unique = true )
     private String email;
@@ -42,9 +42,13 @@ public class Colaborador {
         this.senha = senha;
     }
 
-    public int getCPF() {return CPF;}
+    public long getCpf() {
+        return cpf;
+    }
 
-    public void setCPF(int CPF) {this.CPF = CPF;}
+    public void setCpf(long cpf) {
+        this.cpf = cpf;
+    }
 
     public String getEmail() {return email;}
 
