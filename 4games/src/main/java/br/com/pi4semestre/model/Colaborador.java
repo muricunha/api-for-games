@@ -13,7 +13,9 @@ public class Colaborador {
 
     private String senha;
 
-    private int CPF;
+    private String cpf;
+
+    private String grupo;
 
     @Column(unique = true )
     private String email;
@@ -42,11 +44,19 @@ public class Colaborador {
         this.senha = senha;
     }
 
-    public int getCPF() {return CPF;}
+    public String getCPF() {return cpf;}
 
-    public void setCPF(int CPF) {this.CPF = CPF;}
+    public void setCPF(String cpf) {this.cpf = cpf;}
 
     public String getEmail() {return email;}
 
     public void setEmail(String email) {this.email = email;}
+
+    public String getGrupo() {
+        return grupo;
+    }
+
+    public void setGrupo(String grupo) {
+        this.grupo = grupo;
+    }
 }
