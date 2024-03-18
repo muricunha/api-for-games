@@ -26,9 +26,9 @@ public class ColaboradorController {
     @ResponseBody
     public ResponseEntity<List<Colaborador>> listarColaborador() {
 
-        List<Colaborador> produtos = colaboradorService.listarColaborador();
-        if (!produtos.isEmpty()) {
-            return ResponseEntity.ok(produtos);
+        List<Colaborador> colaborador = colaboradorService.listarColaborador();
+        if (!colaborador.isEmpty()) {
+            return ResponseEntity.ok(colaborador);
         }
 
         return ResponseEntity.notFound().build();
