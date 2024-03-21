@@ -13,7 +13,7 @@ public class Colaborador {
 
     private String senha;
 
-    private String cpf;
+    private long cpf;
 
     private String grupo;
 
@@ -44,9 +44,13 @@ public class Colaborador {
         this.senha = senha;
     }
 
-    public String getCPF() {return cpf;}
+    public long getCpf() {
+        return cpf;
+    }
 
-    public void setCPF(String cpf) {this.cpf = cpf;}
+    public void setCpf(long cpf) {
+        this.cpf = cpf;
+    }
 
     public String getEmail() {return email;}
 
