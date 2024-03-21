@@ -41,7 +41,7 @@ public class ProdutoController {
     }
 
     @DeleteMapping("/deletar")
-    public void deletarProduto(Produto produto) {
+    public void deletarProduto(@RequestBody Produto produto) {
         produtoService.deletarUsuario(produto);
     }
 }

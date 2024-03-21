@@ -1,0 +1,10 @@
+POST http://localhost:8081/produto/salvar
+Content-Type: application/json
+
+{
+  "codigoProduto": 1,
+  "nome": "GTA V",
+  "descricao": "Um jogo de mundo aberto que te possibilita explorar aleatoriamente ou fazer o modo história se desejar.",
+  "preco": 99.99,
+  "qtdEstoque": 5
+}
