@@ -14,6 +14,7 @@ public class Produto {
 
     @Column(unique = true)
       private String nome;
+      private double avaliacao;
 
       private String descricao;
 
@@ -79,5 +80,13 @@ public class Produto {
 
     public void setCaminhoImagem(String caminhoImagem) {
         this.caminhoImagem = caminhoImagem;
+    }
+
+    public double getAvaliacao() {
+        return avaliacao;
+    }
+
+    public void setAvaliacao(double avaliacao) {
+        this.avaliacao = avaliacao;
     }
 }
