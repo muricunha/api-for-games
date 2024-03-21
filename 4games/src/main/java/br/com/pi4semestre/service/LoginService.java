@@ -11,8 +11,7 @@ public class LoginService {
     @Autowired
     private LoginRepository loginRepository;
 
-    public boolean validateLogin(String email, String senha){
-        Colaborador colaborador = loginRepository.loginByUser(email, senha);
-        return colaborador != null;
+    public Colaborador validateLogin(Colaborador colaborador){
+        return loginRepository.logar(colaborador.getEmail(), colaborador.getSenha());
     }
 }
