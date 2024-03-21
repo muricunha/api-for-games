@@ -42,3 +42,5 @@ public class ColaboradorController {
             colaboradorService.alterarColaborador(colaboador);
         }
     }
+
+    
