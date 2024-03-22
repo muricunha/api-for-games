@@ -26,6 +26,10 @@ public class ProdutoService {
         return produtoRepository.findAll();
     }
 
+    public List<Produto> listarProdutosPorNome(String nomeProduto) {
+        return produtoRepository.listarProdutosPorNome(nomeProduto);
+    }
+
     @Transactional
     public void alterarProduto(Produto produto) {
         produtoRepository.save(produto);

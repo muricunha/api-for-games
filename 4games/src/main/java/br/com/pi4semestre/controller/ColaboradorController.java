@@ -25,13 +25,25 @@ public class ColaboradorController {
     @GetMapping("/listar")
     @ResponseBody
     public ResponseEntity<List<Colaborador>> listarColaborador() {
-
         List<Colaborador> produtos = colaboradorService.listarColaborador();
-        if (!produtos.isEmpty()) {
-            return ResponseEntity.ok(produtos);
+
+        if (produtos.isEmpty()) {
+            return ResponseEntity.notFound().build();
         }
 
-        return ResponseEntity.notFound().build();
+        return ResponseEntity.ok(produtos);
+    }
+
+    @PostMapping("/listar")
+    @ResponseBody
+    public ResponseEntity<List<Colaborador>> listarColaboradorPorNome(@RequestBody Colaborador colaborador) {
+        List<Colaborador> produtos = colaboradorService.listarColaboradorPorNome(colaborador);
+
+        if (produtos.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        }
+
+        return ResponseEntity.ok(produtos);
     }
 
     @DeleteMapping("/deletar")

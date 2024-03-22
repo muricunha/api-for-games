@@ -35,6 +35,18 @@ public class ProdutoController {
         return ResponseEntity.notFound().build();
     }
 
+    @PostMapping("/listar")
+    @ResponseBody
+    public ResponseEntity<List<Produto>> listarProdutos(@RequestBody Produto produto) {
+        List<Produto> produtos = produtoService.listarProdutosPorNome(produto.getNome());
+
+        if (produtos.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        }
+
+        return ResponseEntity.ok(produtos);
+    }
+
     @PostMapping("/alterar")
     public void alterarProduto(@RequestBody Produto produto) {
         produtoService.alterarProduto(produto);
