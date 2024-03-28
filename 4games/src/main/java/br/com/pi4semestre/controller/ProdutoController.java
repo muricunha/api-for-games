@@ -35,7 +35,7 @@ public class ProdutoController {
         return ResponseEntity.notFound().build();
     }
 
-    @PostMapping("/alterar")
+    @PutMapping("/alterar")
     public void alterarProduto(@RequestBody Produto produto) {
         produtoService.alterarProduto(produto);
     }

@@ -10,16 +10,15 @@ public class Produto {
     private int id;
 
     @Column(unique = true)
-      private int codigoProduto;
+    private int codigoProduto;
 
     @Column(unique = true)
-      private String nome;
+    private String nome;
 
-      private String descricao;
-
-      private double preco;
-
-      private int qtdEstoque;
+    private String avaliacao;
+    private String descricao;
+    private double preco;
+    private int qtdEstoque;
 
 
     public int getCodigoProduto() {
@@ -58,6 +57,9 @@ public class Produto {
         return qtdEstoque;
     }
 
+    public String getAvaliacao() {return avaliacao;}
+
+    public void setAvaliacao(String avaliacao) {this.avaliacao = avaliacao;}
     public int getId() {
         return id;
     }
