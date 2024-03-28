@@ -10,15 +10,19 @@ public class Produto {
     private int id;
 
     @Column(unique = true)
-    private int codigoProduto;
+      private int codigoProduto;
 
     @Column(unique = true)
-    private String nome;
+      private String nome;
+      private double avaliacao;
 
-    private String avaliacao;
-    private String descricao;
-    private double preco;
-    private int qtdEstoque;
+      private String descricao;
+
+      private double preco;
+
+      private int qtdEstoque;
+
+      private String caminhoImagem;
 
 
     public int getCodigoProduto() {
@@ -57,9 +61,6 @@ public class Produto {
         return qtdEstoque;
     }
 
-    public String getAvaliacao() {return avaliacao;}
-
-    public void setAvaliacao(String avaliacao) {this.avaliacao = avaliacao;}
     public int getId() {
         return id;
     }
@@ -72,5 +73,20 @@ public class Produto {
         this.qtdEstoque = qtdEstoque;
 
 
+    }
+    public String getCaminhoImagem() {
+        return caminhoImagem;
+    }
+
+    public void setCaminhoImagem(String caminhoImagem) {
+        this.caminhoImagem = caminhoImagem;
+    }
+
+    public double getAvaliacao() {
+        return avaliacao;
+    }
+
+    public void setAvaliacao(double avaliacao) {
+        this.avaliacao = avaliacao;
     }
 }

@@ -18,10 +18,13 @@ public class ColaboradorService {
         this.colaboradorRepository = colaboradorRepository;
     }
 
-
     public void salvarColaborador(Colaborador colaborador){this.colaboradorRepository.save(colaborador);}
 
     public List<Colaborador> listarColaborador(){return colaboradorRepository.findAll();}
+
+    public List<Colaborador> listarColaboradorPorNome(Colaborador colaborador){
+        return colaboradorRepository.listarColaboradorPorNome(colaborador.getNome());
+    }
 
     @Transactional
     public void alterarColaborador(Colaborador colaborador) {
