@@ -1,28 +1,23 @@
 package br.com.pi4semestre.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
 @Entity
 public class Produto {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-
-    @Column(unique = true)
       private int codigoProduto;
 
     @Column(unique = true)
       private String nome;
-      private double avaliacao;
 
       private String descricao;
 
       private double preco;
 
       private int qtdEstoque;
-
-      private String caminhoImagem;
 
 
     public int getCodigoProduto() {
@@ -61,32 +56,7 @@ public class Produto {
         return qtdEstoque;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public void setQtdEstoque(int qtdEstoque) {
         this.qtdEstoque = qtdEstoque;
-
-
-    }
-    public String getCaminhoImagem() {
-        return caminhoImagem;
-    }
-
-    public void setCaminhoImagem(String caminhoImagem) {
-        this.caminhoImagem = caminhoImagem;
-    }
-
-    public double getAvaliacao() {
-        return avaliacao;
-    }
-
-    public void setAvaliacao(double avaliacao) {
-        this.avaliacao = avaliacao;
     }
 }
