@@ -1,0 +1,10 @@
+POST http://localhost:8081/usuario/salvar
+Content-Type: application/json
+
+{
+  "nome": "Murilo Santos",
+  "email": "murilos@gmail.com",
+  "cpf": "33333333333",
+  "caminhoImagem": "11111111111"
+
+}

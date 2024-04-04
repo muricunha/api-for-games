@@ -19,6 +19,8 @@ public class Produto {
 
       private int qtdEstoque;
 
+      private String caminhoImagem;
+
 
     public int getCodigoProduto() {
         return codigoProduto;
@@ -58,5 +60,13 @@ public class Produto {
 
     public void setQtdEstoque(int qtdEstoque) {
         this.qtdEstoque = qtdEstoque;
+    }
+
+    public String getCaminhoImagem() {
+        return caminhoImagem;
+    }
+
+    public void setCaminhoImagem(String caminhoImagem) {
+        this.caminhoImagem = caminhoImagem;
     }
 }
