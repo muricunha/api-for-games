@@ -15,7 +15,9 @@ public class UsuarioController {
     }
 
     @PostMapping("/salvar")
-    public void salvarUsuario(@RequestBody Usuario usuario){usuarioService.salvarUsuario(usuario);}
+    public void salvarUsuario(@RequestBody Usuario usuario){
+        usuarioService.salvarUsuario(usuario);
+    }
 
     @PostMapping("/alterar")
     public void alterarUsuario(@RequestBody Usuario usuario){usuarioService.alterarUsuario(usuario);}

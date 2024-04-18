@@ -1,6 +1,7 @@
 package br.com.pi4semestre.model;
 
 import jakarta.persistence.*;
+import java.util.List;
 
 @Entity
 public class Usuario {
@@ -19,6 +20,8 @@ public class Usuario {
 
     private String caminhoImagem;
 
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Endereco> endereco;
     public int getId() {
         return id;
     }
@@ -57,5 +60,13 @@ public class Usuario {
 
     public void setCaminhoImagem(String enderecoImagem) {
         this.caminhoImagem = enderecoImagem;
+    }
+
+    public List<Endereco> getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(List<Endereco> endereco) {
+        this.endereco = endereco;
     }
 }
