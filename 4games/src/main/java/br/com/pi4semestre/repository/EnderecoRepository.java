@@ -12,3 +12,4 @@ public interface EnderecoRepository extends JpaRepository<Endereco,Integer> {
     @Query("SELECT u FROM Usuario u WHERE u.id = :id")
     List<Endereco> buscarPorEnderecoPorUsuario(@Param("id") int id);
 }
+
