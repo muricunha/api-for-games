@@ -2,9 +2,21 @@ POST http://localhost:8081/usuario/salvar
 Content-Type: application/json
 
 {
-  "nome": "Murilo Santos",
-  "email": "murilos@gmail.com",
-  "cpf": "33333333333",
-  "caminhoImagem": "11111111111"
-
+  "nome": "Jeremias",
+  "email": "jeremias@gmail.com",
+  "cpf": 55885520379,
+  "caminhoImagem": "",
+  "endereco": [
+    {
+      "nome": "Casa",
+      "endereco": "Rua Goreti, 171",
+      "cep": 5625020,
+      "numero": 55,
+      "complemento": "Atras do Mercado",
+      "bairro": "Jardim Salete",
+      "cidade": "Taboão da Serra",
+      "uf": "SP",
+      "observacao": "Chegar após as 18 horas"
+    }
+  ]
 }

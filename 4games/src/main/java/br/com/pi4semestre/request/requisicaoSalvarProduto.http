@@ -3,8 +3,10 @@ Content-Type: application/json
 
 {
   "codigoProduto": 1,
-  "nome": "GTA V",
-  "descricao": "Um jogo de mundo aberto que te possibilita explorar aleatoriamente ou fazer o modo história se desejar.",
-  "preco": 99.99,
-  "qtdEstoque": 5
+  "nome": "Resident Evil 1 - Remake",
+  "avaliacao": 0.5,
+  "descricao": "Jogo do tema survivor horror" ,
+  "preco": 199.99,
+  "qtdEstoque": 5,
+  "caminhoImagem": ""
 }
