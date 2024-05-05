@@ -1,7 +1,6 @@
 package br.com.pi4semestre.model;
 
 import jakarta.persistence.*;
-
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
@@ -11,16 +10,18 @@ public class Pedido {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int numeroPedidoKey;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.MERGE)
     private Usuario usuario;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.MERGE)
     private Endereco enderecoEntrega;
-    @OneToMany
+    @OneToMany(cascade = CascadeType.MERGE)
     private List<Produto> produtos;
     @OneToOne
     private FormaPagamento formaPagamento;
     private LocalDate dataCompra;
     private BigDecimal valorTotal;
+    @Enumerated
+    private StatusPedido statusPedido;
     public int getNumeroPedidoKey() {
         return numeroPedidoKey;
     }
@@ -75,5 +76,13 @@ public class Pedido {
 
     public void setValorTotal(BigDecimal valorTotal) {
         this.valorTotal = valorTotal;
+    }
+
+    public StatusPedido getStatusPedido() {
+        return statusPedido;
+    }
+
+    public void setStatusPedido(StatusPedido statusPedido) {
+        this.statusPedido = statusPedido;
     }
 }

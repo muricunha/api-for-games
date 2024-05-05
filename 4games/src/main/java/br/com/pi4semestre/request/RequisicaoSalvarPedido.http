@@ -1,0 +1,29 @@
+POST http://localhost:8081/pedido/salvar
+Content-Type: application/json
+
+{
+  "usuario": {
+    "id": 1
+  },
+  "enderecoEntrega": {
+    "id": 1
+  },
+  "produtos": [
+    {
+      "id": 1
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    }
+  ],
+  "dataCompra":[
+    2024,
+    1,
+    1
+  ],
+  "valorTotal": 599.50,
+  "statusPedido": "EM_ANDAMENTO"
+}
