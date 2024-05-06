@@ -18,6 +18,8 @@ public class Usuario {
     @Column(unique = true)
     private long cpf;
 
+    private String senha;
+
     private String caminhoImagem;
 
     @OneToMany(cascade = CascadeType.ALL)
@@ -60,6 +62,14 @@ public class Usuario {
 
     public void setCaminhoImagem(String enderecoImagem) {
         this.caminhoImagem = enderecoImagem;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 
     public List<Endereco> getEndereco() {
