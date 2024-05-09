@@ -12,7 +12,7 @@ public class Endereco {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nome;
-    private String endereco;
+    private String logradouro;
     private long cep;
     private int numero;
     private String complemento;
@@ -35,12 +35,12 @@ public class Endereco {
         this.nome = nome;
     }
 
-    public String getEndereco() {
-        return endereco;
+    public String getLogradouro() {
+        return logradouro;
     }
 
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
+    public void setLogradouro(String endereco) {
+        this.logradouro = endereco;
     }
 
     public int getNumero() {

@@ -1,4 +1,5 @@
 package br.com.pi4semestre.controller;
+
 import br.com.pi4semestre.service.EscritorDeImagemService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,6 +23,6 @@ public class EscritorDeImagemController {
     public ResponseEntity<String> salvarImagem(@RequestParam("imagem") MultipartFile imagem) {
         String caminhoImagem = service.salvarImagem(imagem);
         return ResponseEntity.ok(caminhoImagem);
-}
+    }
 
 }
