@@ -1,0 +1,9 @@
+POST http://localhost:8081/cartao/salvar
+Content-Type: application/json
+
+{
+  "nome": "MURILO SANTOS",
+  "numero": 111111111111,
+  "validade": "06122027",
+  "seguranca": 778
+}
