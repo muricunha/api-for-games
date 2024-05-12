@@ -13,16 +13,17 @@ public class CartaoController {
         this.cartaoService = cartaoService;
     }
 
-@PostMapping("/salvar")
-    public void salvarCartao(@RequestBody Cartao cartao){
+    @PostMapping("/salvar")
+    public void salvarCartao(@RequestBody Cartao cartao) {
         cartaoService.salvarCartao(cartao);
     }
 
-@PostMapping("/alterar")
-    public void alterarCartao(@RequestBody Cartao cartao){
+    @PostMapping("/alterar")
+    public void alterarCartao(@RequestBody Cartao cartao) {
         cartaoService.alterarCartao(cartao);
     }
-@DeleteMapping("/delete")
-    public void deletarCartao(@RequestBody Cartao cartao){
+    @DeleteMapping("/delete")
+    public void deletarCartao(@RequestBody Cartao cartao) {
         cartaoService.deletarCartao(cartao);
     }
+}
