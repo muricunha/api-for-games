@@ -11,13 +11,11 @@ public class Usuario {
     private int id;
 
     private String nome;
-
-    @Column(unique = true)
     private String email;
-
-    @Column(unique = true)
     private long cpf;
 
+    private String nascimento;
+    private String genero;
     private String senha;
 
     private String caminhoImagem;
@@ -34,6 +32,22 @@ public class Usuario {
 
     public String getNome() {
         return nome;
+    }
+
+    public String getNascimento() {
+        return nascimento;
+    }
+
+    public void setNascimento(String nascimento) {
+        this.nascimento = nascimento;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
     }
 
     public void setNome(String nome) {

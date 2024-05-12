@@ -19,7 +19,7 @@ public class UsuarioController {
         usuarioService.salvarUsuario(usuario);
     }
 
-    @PostMapping("/alterar")
+    @PutMapping("/alterar")
     public void alterarUsuario(@RequestBody Usuario usuario){usuarioService.alterarUsuario(usuario);}
 
     @DeleteMapping("/deletar")
