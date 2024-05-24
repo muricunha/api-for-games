@@ -1,9 +1,0 @@
-DELETE http://localhost:8081/colaborador/deletar
-Content-Type: application/json
-
-{
-  "nome": "Murilo Santos",
-  "senha":"murilove",
-  "email": "murilos@gmail.com"
-
-}
