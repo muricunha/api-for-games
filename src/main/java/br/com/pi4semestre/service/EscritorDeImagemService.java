@@ -17,7 +17,7 @@ import static java.lang.String.format;
 @Service
 public class EscritorDeImagemService {
 
-    private static final String URL_BASE = System.getProperty("user.dir") + "\\front-end\\src\\assets\\imagens-produtos\\";
+    private static final String URL_BASE = System.getProperty("user.dir") + "\\angular-for-games\\src\\assets\\imagens-produtos\\";
 
     private String nomeArquivo;
 
