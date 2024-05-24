@@ -2,6 +2,7 @@ package br.com.pi4semestre.controller;
 
 import br.com.pi4semestre.model.Pedido;
 import br.com.pi4semestre.service.PedidoService;
+import org.springframework.data.repository.query.Param;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,10 +28,22 @@ public class PedidoController {
         pedidoService.salvarPedido(pedido);
     }
 
-    @PostMapping("/listar")
+    @GetMapping("/listar")
     @ResponseBody
     public ResponseEntity<List<Pedido>> listarPedidosPorUsuario(@RequestBody Pedido pedido){
         List<Pedido> pedidos = pedidoService.listarPedidos(pedido.getUsuario().getId());
+
+        if(pedidos.isEmpty()){
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(pedidos);
+    }
+
+
+    @PostMapping ("/listarPorNome")
+    @ResponseBody
+    public ResponseEntity<List<Pedido>> listarPedidosPorUsuarioPorNome(@RequestBody String nome){
+        List<Pedido> pedidos = pedidoService.listarPedidosPorNome(nome);
 
         if(pedidos.isEmpty()){
             return ResponseEntity.notFound().build();

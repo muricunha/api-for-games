@@ -25,6 +25,8 @@ public class PedidoService {
 
     public List<Pedido> listarPedidos(int id){ return pedidoRepository.listarPedidosPorUsuario(id);}
 
+    public List<Pedido> listarPedidosPorNome(String nome){ return pedidoRepository.listarPedidosPorUsuarioPorNome(nome);}
+
     @Transactional
     public void cancelarPedido(@RequestBody Pedido pedido){ pedidoRepository.cancelarPedido(pedido.getStatusPedido());}
 }

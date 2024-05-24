@@ -12,6 +12,9 @@ public interface PedidoRepository extends JpaRepository<Pedido, Integer> {
     @Query("SELECT p FROM Pedido p WHERE CAST(p.usuario.id as string) LIKE CONCAT('%', :id, '%')")
     List<Pedido> listarPedidosPorUsuario(@Param("id") int id);
 
+    @Query("SELECT p FROM Pedido p WHERE CAST(p.usuario.nome as string) LIKE CONCAT('%', :nome, '%')")
+    List<Pedido> listarPedidosPorUsuarioPorNome(@Param("nome") String nome);
+
     @Modifying
     @Query("UPDATE Pedido p SET p.statusPedido = :statusPedido")
     void cancelarPedido(@Param("statusPedido") StatusPedido statusPedido);

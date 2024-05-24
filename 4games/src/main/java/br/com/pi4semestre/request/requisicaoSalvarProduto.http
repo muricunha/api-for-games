@@ -2,11 +2,12 @@ POST http://localhost:8081/produto/salvar
 Content-Type: application/json
 
 {
-  "codigoProduto": 1,
-  "nome": "Resident Evil 1 - Remake",
+  "codigoProduto": 3,
+  "nome": "Resident Evil 3 - Remake",
   "avaliacao": 0.5,
   "descricao": "Jogo do tema survivor horror" ,
   "preco": 199.99,
   "qtdEstoque": 5,
   "caminhoImagem": ""
 }
+

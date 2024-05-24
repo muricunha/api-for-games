@@ -2,7 +2,7 @@ package br.com.pi4semestre.model;
 
 public enum StatusPedido {
 
-    CANCELADO("Cancelado"),
+    AGUARDANDO_APROVAÇAO("Aguardando Aprovação"),
     EM_ANDAMENTO("Em Andamento"),
     CONCLUIDO("Concluído");
 
