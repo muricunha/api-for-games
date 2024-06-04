@@ -16,6 +16,6 @@ public interface PedidoRepository extends JpaRepository<Pedido, Integer> {
     List<Pedido> listarPedidosPorUsuarioPorNome(@Param("nome") String nome);
 
     @Modifying
-    @Query("UPDATE Pedido p SET p.statusPedido = :statusPedido")
-    void cancelarPedido(@Param("statusPedido") StatusPedido statusPedido);
+    @Query("UPDATE Pedido p SET p.statusPedido = :statusPedido WHERE p.numeroPedidoKey = :numeroPedidoKey")
+    void alterarStatusPedido(@Param("statusPedido") StatusPedido statusPedido, @Param("numeroPedidoKey") int numeroPedidoKey);
 }

@@ -51,5 +51,5 @@ public class PedidoController {
         return ResponseEntity.ok(pedidos);
     }
     @PutMapping("/cancelar")
-    public void cancelarPedido(Pedido pedido){pedidoService.cancelarPedido(pedido);}
+    public void alterarStatusPedido(Pedido pedido){pedidoService.alterarStatusPedido(pedido);}
 }

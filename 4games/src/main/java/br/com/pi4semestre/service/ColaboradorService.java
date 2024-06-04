@@ -17,7 +17,7 @@ public class ColaboradorService {
     public ColaboradorService(ColaboradorRepository colaboradorRepository) {
         this.colaboradorRepository = colaboradorRepository;
     }
-
+    @Transactional
     public void salvarColaborador(Colaborador colaborador){this.colaboradorRepository.save(colaborador);}
 
     public List<Colaborador> listarColaborador(){return colaboradorRepository.findAll();}

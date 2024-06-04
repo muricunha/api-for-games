@@ -82,4 +82,12 @@ public class Produto {
     public void setAvaliacao(double avaliacao) {
         this.avaliacao = avaliacao;
     }
+
+    public String getCaminhoImagem() {
+        return caminhoImagem;
+    }
+
+    public void setCaminhoImagem(String caminhoImagem) {
+        this.caminhoImagem = caminhoImagem;
+    }
 }

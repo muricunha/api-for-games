@@ -9,17 +9,13 @@ public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
     private String nome;
     private String email;
+    @Column(unique = true)
     private long cpf;
-
     private String nascimento;
     private String genero;
     private String senha;
-
-    private String caminhoImagem;
-
     @OneToMany(cascade = CascadeType.ALL)
     private List<Endereco> endereco;
     public int getId() {
@@ -68,14 +64,6 @@ public class Usuario {
 
     public void setCpf(long cpf) {
         this.cpf = cpf;
-    }
-
-    public String getCaminhoImagem() {
-        return caminhoImagem;
-    }
-
-    public void setCaminhoImagem(String enderecoImagem) {
-        this.caminhoImagem = enderecoImagem;
     }
 
     public String getSenha() {
