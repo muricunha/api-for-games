@@ -2,7 +2,7 @@ package br.com.pi4semestre.model;
 
 public enum StatusPedido {
 
-    AGUARDANDO_APROVAÇAO("Aguardando Aprovação"),
+    AGUARDANDO_APROVACAO("Aguardando Aprovação"),
     EM_ANDAMENTO("Em Andamento"),
     CONCLUIDO("Concluído");
 
