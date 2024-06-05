@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 @RestController
 @RequestMapping("/produto")
@@ -20,9 +23,14 @@ public class EscritorDeImagemController {
     }
 
     @PostMapping("/salvarImagem")
-    public ResponseEntity<String> salvarImagem(@RequestParam("imagem") MultipartFile imagem) {
-        String caminhoImagem = service.salvarImagem(imagem);
-        return ResponseEntity.ok(caminhoImagem);
+    public ResponseEntity<List<String>> salvarImagem(@RequestParam("imagens") List<MultipartFile> imagens) {
+        List<String> listaDeCaminhos = new ArrayList<>();
+
+        imagens.forEach(imagem -> {
+            listaDeCaminhos.add(service.salvarImagem(imagem));
+        });
+
+        return ResponseEntity.ok(listaDeCaminhos);
     }
 
 }

@@ -2,6 +2,8 @@ package br.com.pi4semestre.model;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 public class Produto {
 
@@ -21,8 +23,8 @@ public class Produto {
       private double preco;
 
       private int qtdEstoque;
-
-      private String caminhoImagem;
+      @OneToMany(cascade = CascadeType.ALL)
+      private List<CaminhoImagem> caminhoImagem;
 
 
     public int getCodigoProduto() {
@@ -71,8 +73,6 @@ public class Produto {
 
     public void setQtdEstoque(int qtdEstoque) {
         this.qtdEstoque = qtdEstoque;
-
-
     }
 
     public double getAvaliacao() {
@@ -83,11 +83,11 @@ public class Produto {
         this.avaliacao = avaliacao;
     }
 
-    public String getCaminhoImagem() {
+    public List<CaminhoImagem> getCaminhoImagem() {
         return caminhoImagem;
     }
 
-    public void setCaminhoImagem(String caminhoImagem) {
+    public void setCaminhoImagem(List<CaminhoImagem> caminhoImagem) {
         this.caminhoImagem = caminhoImagem;
     }
 }
