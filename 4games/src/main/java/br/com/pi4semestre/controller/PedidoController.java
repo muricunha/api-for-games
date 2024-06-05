@@ -1,5 +1,6 @@
 package br.com.pi4semestre.controller;
 
+import br.com.pi4semestre.model.DTO.ListaPedidoPorNomeForm;
 import br.com.pi4semestre.model.Pedido;
 import br.com.pi4semestre.service.PedidoService;
 import org.springframework.data.repository.query.Param;
@@ -42,8 +43,8 @@ public class PedidoController {
 
     @PostMapping ("/listarPorNome")
     @ResponseBody
-    public ResponseEntity<List<Pedido>> listarPedidosPorUsuarioPorNome(@RequestBody String nome){
-        List<Pedido> pedidos = pedidoService.listarPedidosPorNome(nome);
+    public ResponseEntity<List<Pedido>> listarPedidosPorUsuarioPorNome(@RequestBody ListaPedidoPorNomeForm form){
+        List<Pedido> pedidos = pedidoService.listarPedidosPorNome(form.getNome());
 
         if(pedidos.isEmpty()){
             return ResponseEntity.notFound().build();
