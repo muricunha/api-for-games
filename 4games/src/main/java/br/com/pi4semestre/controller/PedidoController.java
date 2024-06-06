@@ -3,7 +3,6 @@ package br.com.pi4semestre.controller;
 import br.com.pi4semestre.model.DTO.ListaPedidoPorNomeForm;
 import br.com.pi4semestre.model.Pedido;
 import br.com.pi4semestre.service.PedidoService;
-import org.springframework.data.repository.query.Param;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,6 +28,7 @@ public class PedidoController {
         pedidoService.salvarPedido(pedido);
     }
 
+
     @GetMapping("/listar")
     @ResponseBody
     public ResponseEntity<List<Pedido>> listarPedidosPorUsuario(@RequestBody Pedido pedido){
@@ -51,6 +51,6 @@ public class PedidoController {
         }
         return ResponseEntity.ok(pedidos);
     }
-    @PutMapping("/cancelar")
+    @PatchMapping ("/cancelar")
     public void alterarStatusPedido(Pedido pedido){pedidoService.alterarStatusPedido(pedido);}
 }

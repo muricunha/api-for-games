@@ -1,15 +1,11 @@
 package br.com.pi4semestre.service;
 
 import br.com.pi4semestre.model.Pedido;
-import br.com.pi4semestre.model.Usuario;
 import br.com.pi4semestre.repository.PedidoRepository;
-import br.com.pi4semestre.repository.UsuarioRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
-import java.util.regex.Pattern;
 
 @Service
 public class PedidoService {
@@ -38,7 +34,7 @@ public class PedidoService {
     }
 
     @Transactional
-    public void alterarStatusPedido(@RequestBody Pedido pedido) {
+    public void alterarStatusPedido(Pedido pedido) {
         pedidoRepository.alterarStatusPedido(pedido.getStatusPedido(), pedido.getNumeroPedidoKey());
     }
 }
