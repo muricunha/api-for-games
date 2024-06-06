@@ -9,7 +9,7 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface PedidoRepository extends JpaRepository<Pedido, Integer> {
-    @Query("SELECT p FROM Pedido p WHERE CAST(p.usuario.id as string) LIKE CONCAT('%', :id, '%')")
+    @Query("SELECT p FROM Pedido p WHERE CAST(p.usuario.id as string) LIKE CONCAT('%', :id, '%') ORDER BY p.numeroPedidoKey DESC")
     List<Pedido> listarPedidosPorUsuario(@Param("id") int id);
 
     @Query("SELECT p FROM Pedido p WHERE CAST(p.usuario.nome as string) LIKE CONCAT('%', :nome, '%')")
