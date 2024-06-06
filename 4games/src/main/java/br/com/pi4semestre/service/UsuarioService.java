@@ -21,4 +21,8 @@ public class UsuarioService {
     public void alterarUsuario(Usuario usuario){usuarioRepository.save(usuario);}
 
     public void deletarUsuario(@RequestBody Usuario usuario){usuarioRepository.delete(usuario);}
+
+    public Usuario obterUsuarioPorId(int id) {
+         return usuarioRepository.findById(id).orElseThrow();
+    }
 }

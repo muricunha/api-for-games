@@ -15,13 +15,23 @@ public class UsuarioController {
     }
 
     @PostMapping("/salvar")
-    public void salvarUsuario(@RequestBody Usuario usuario){
+    public void salvarUsuario(@RequestBody Usuario usuario) {
         usuarioService.salvarUsuario(usuario);
     }
 
     @PutMapping("/alterar")
-    public void alterarUsuario(@RequestBody Usuario usuario){usuarioService.alterarUsuario(usuario);}
+    public void alterarUsuario(@RequestBody Usuario usuario) {
+        usuarioService.alterarUsuario(usuario);
+    }
+
+    @GetMapping("/{id}")
+    @ResponseBody
+    public Usuario obterUsuarioPorId(@PathVariable("id") int id) {
+        return usuarioService.obterUsuarioPorId(id);
+    }
 
     @DeleteMapping("/deletar")
-    public void deletarUsuario(@RequestBody Usuario usuario){usuarioService.deletarUsuario(usuario);}
+    public void deletarUsuario(@RequestBody Usuario usuario) {
+        usuarioService.deletarUsuario(usuario);
+    }
 }
